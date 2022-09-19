@@ -1,0 +1,71 @@
+.App {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: rgb(219, 219, 219);
+  /* margin: 20px auto; */
+  /* width: 90%; */
+  /* max-width: 800px; */
+ }
+ 
+ * App.css
+ 
+ .todo-list ul {
+  padding: 0 10px 10px 10px;
+  list-style-type: none;
+ }
+ 
+ .text-bios{
+  font-size: 15px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+ }
+
+ .todo-list li {
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+  border-radius: 4px;
+  background: rgb(240, 240, 240);
+  color: black;
+ }
+ 
+ .todo-list li input[type='checkbox'] {
+  -ms-transform: scale(2); 
+  -moz-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2); 
+  transform: scale(2);
+  padding: 10px;
+  float: right;
+ }
+
+ .todo-list li button {
+  float: right;
+  margin-right: 20px;
+ }
+ 
+ .todo-list li button:hover {
+  cursor: pointer;
+  background: red;
+  color: white;
+ }
+
+
+ .formWidth{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+ }
+
+ .form-todo{
+  margin-top: 10px;
+  padding: 20px 100px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ }
+
+ .checktext{
+  display: flex;
+  justify-content: space-between;
+ }
