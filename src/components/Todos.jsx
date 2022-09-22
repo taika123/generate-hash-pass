@@ -1,23 +1,49 @@
 import React from "react";
 import "../App.css";
 import { connect } from "react-redux";
-
-function Todos({ todos }) {
+import { deleteTodo } from "../store/action/todoAction";
+function Todos({ todos, deleteTodo }) {
   return (
     <div className="checktext">
-      <ol type="">
+      {/* <ol type="">
         <p className="text-bios">BIOS PASSWORD: </p>
-        {todos?.map((todo) => (
-          <li key={todo.id}>{todo.bios}</li>
-        ))}
-      </ol>
+          {todos?.map((todo) => (
+            // <li key={todo.id}>{todo.bios}</li>
+           
+          ))}
+      </ol> */}
 
-      <ol>
+      <table>
+        <tbody>
+          <tr>
+            <th>BIOS PASSWORD:</th>
+            <th>HOST NAME:</th>
+          </tr>
+          {todos?.map((todo) => (
+            <tr key={todo.id}>
+              <td>{todo.bios}</td>
+              <td>
+                {todo.hostname}{" "}
+                <span
+                  className="spanDelete"
+                  onClick={deleteTodo.bind(this, todo.id)}
+                >
+                  &times;
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {/* <ol>
         <p className="text-bios">HOST NAME:</p>
-        {todos?.map((todo) => (
-          <li key={todo.id}>{todo.hostname}</li>
-        ))}
-      </ol>
+          {todos?.map((todo) => (
+            <li key={todo.id}>{todo.hostname}
+              <span className="spanDelete" onClick={deleteTodo.bind(this, todo.id)}>&times;</span>
+            </li>
+          ))}
+      </ol> */}
     </div>
   );
 }
@@ -25,4 +51,4 @@ function Todos({ todos }) {
 const mapStateToProps = (state) => ({
   todos: state.myTodos.todos,
 });
-export default connect(mapStateToProps, {})(Todos);
+export default connect(mapStateToProps, { deleteTodo })(Todos);

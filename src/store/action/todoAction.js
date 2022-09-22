@@ -4,3 +4,9 @@ export const addTodo = newTodo => dispatch => {
         payload: newTodo
     })
 }
+export const deleteTodo = id => dispatch => {
+    dispatch({
+        type:"DELETE_TODO",
+        payload: id
+    })
+}

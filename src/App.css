@@ -63,9 +63,81 @@
   margin-top: 10px;
   padding: 20px 100px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* background-color: rgb(88, 65, 65); */
+  /* color: white; */
  }
 
  .checktext{
   display: flex;
-  justify-content: space-between;
+  margin-top: 10px;
+  /* padding: 0 10px 0 5px; */
+  justify-content: center;
+  /* background-color: rgb(180, 108, 180);
+  color: white; */
+  border-radius: 5px;
  }
+
+ .checktext > ol > li {
+  font-size: 16px;
+ }
+
+ .checktext > ol > li:hover {
+  color: rgb(224, 189, 189);
+ }
+
+ .spanDelete{
+  /* padding-left: 10px; */
+  margin-left: 10px;
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+ }
+
+ .spanDelete:hover{
+  cursor: pointer;
+  color: red;
+ }
+
+
+ label {
+  padding-left: 12px;
+ }
+
+ label > select {
+  margin-left: 5px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+label > select > option{
+  background-color: black;
+  color: white;
+}
+
+
+form > input:nth-child(2) {
+  margin: 0 0 5px 5px;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+form > input:nth-child(3) {
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+table{
+  width: 100%;
+}
+
+td:hover{
+  background-color: wheat;
+  color: black;
+  cursor: pointer;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 8px;
+}

@@ -4,11 +4,13 @@ import { v4 as uuidv4 } from "uuid";
 import { addTodo } from "../store/action/todoAction";
 import { connect } from "react-redux";
 import Todos from "./Todos";
+import { useRef } from "react";
 
 
 
 function TodoForm({ addTodo, todos }) {
 
+  const inputRef = useRef()
 
   //hash password
   const md5 = function (string) {
@@ -329,14 +331,19 @@ function TodoForm({ addTodo, todos }) {
       };
     }
 
+    const handleClear = () => {
+      inputRef.current.focus();
+    }
+
   return (
     <div>
       <form onSubmit={onFormSubmit}>
-        Serialnumber:
+        <strong>Serialnumber:</strong>
         <input type="text" name="title" onChange={handleChange} value={title} />
-        <input type="submit" value="Generate" /> <br />
+        <input type="submit" value="Generate"  ref={inputRef} onClick={handleClear}/> 
+        <br/>
         <label htmlFor="">
-          Company:
+         <strong> Company:</strong>
           <select value={priority} onChange={handleChangeOptions}>
             {companyList?.map((data) => (
               <option key={data.value} value={data.label}>
@@ -346,7 +353,7 @@ function TodoForm({ addTodo, todos }) {
           </select>
         </label>
         <label htmlFor="">
-          Country:
+          <strong>Country:</strong>
           <select value={country} onChange={handleChangeCountry}>
             {countryList?.map((data) => (
               <option key={data.value} value={data.label}>
@@ -356,7 +363,7 @@ function TodoForm({ addTodo, todos }) {
           </select>
         </label>
         <label htmlFor="">
-          Machine:
+         <strong> Machine:</strong>
           <select value={machine} onChange={handleChangeMachine}>
             {machineList?.map((data) => (
               <option key={data.value} value={data.label}>
@@ -366,7 +373,7 @@ function TodoForm({ addTodo, todos }) {
           </select>
         </label>
         <label htmlFor="">
-          Operation:
+         <strong> Operation:</strong>
           <select value={machine} onChange={handleChangeOperation}>
             {operationList?.map((data) => (
               <option key={data.value} value={data.label}>
